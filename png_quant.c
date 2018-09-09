@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include "dirent.h"
 #include <Windows.h>
+#include <stdbool.h>
 
 #define EXIT_NO_ERROR 2
 #define EXIT_WRONG_NUM_ARGS 3
@@ -110,6 +111,7 @@ int main(int argc, char* argv[])
 		state_out.info_raw.bitdepth = 8;
 		state_out.info_png.color.colortype = LCT_PALETTE;
 		state_out.info_png.color.bitdepth = 8;
+		state_out.encoder.auto_convert = false;
 
 		for (unsigned int i = 0; i < palette->count; i++) {
 			lodepng_palette_add(&state_out.info_png.color, palette->entries[i].r, palette->entries[i].g, palette->entries[i].b, palette->entries[i].a);
