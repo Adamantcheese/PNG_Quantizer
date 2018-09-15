@@ -9,7 +9,7 @@
 #define EXIT_NO_ERROR 2
 #define EXIT_WRONG_NUM_ARGS 3
 
-#define ERR_ARGS "Required argument: Directory path to images from BDEdit\nUse argument \"-help\" for more information."
+#define ERR_ARGS "Required argument: Directory path to images\nUse argument \"-help\" for more information."
 #define ERR_LODEPNG lodepng_error_text(status)
 #define ERR_LIBQUANT "Quantization failed."
 #define ERR_FILE_OUT "Unable to write output file."
@@ -26,8 +26,8 @@ int main(int argc, char* argv[])
 
 	if (strcmp(argv[1], "-help") == 0)
 	{
-		printf("This tool takes in a directory of files from BDEdit and generates a palette for them, then quantizes a different directory of images with that palette.");
-		printf("This tool is meant to be used for editing Interactive Graphics (IG) streams used in BluRay menus.");
+		printf("This tool takes in a directory of files, generates a palette for all them, then remaps those images and writes them out to a new directory. ");
+		printf("This tool is meant to be used for editing Interactive Graphics (IG) streams used in BluRay menus in association with BDEdit.");
 		printf("\n\nUSAGE:\n1) Save out all of the images in an IG menu using BDEdit.\n2) Modify them as needed.\n");
 		printf("3) Use this tool; output is into a \"new\" folder in the input directory.");
 		printf("\n4) Go back to BDEdit and replace the ALL images, being sure to check both checkboxes to replace the palette and object.\n\n");
